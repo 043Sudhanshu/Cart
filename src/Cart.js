@@ -12,21 +12,21 @@ class Cart extends React.Component{
                             price:25000,
                             qty:4,
                             title:'PS4',
-                            id:1
+                            key:1
                         },
 
                     {
                         price:55000,
                         qty:1,
                         title:'AC',
-                        id:2
+                        key:2
                     },
 
                         {
                             price:60000,
                             qty:1,
                             title:'Snooker table',
-                            id:3
+                            key:3
                         }
             ]
         }
@@ -55,6 +55,20 @@ class Cart extends React.Component{
        }
 
 
+       deleteq=(id)=>{
+      const {products}=this.state;
+      const idremovedarray= products.filter((item)=>{return (item.key!==id)});
+      console.log(id);
+     
+      console.log(idremovedarray);
+      this.setState({
+          products:idremovedarray
+      })
+     
+       }
+
+
+
   render(){
 
     return (
@@ -68,7 +82,8 @@ class Cart extends React.Component{
             product={product} 
             increasequantity={this.increaseq}
             decreasequantity={this.decreaseq}
-            key={this.id}
+            deleteitem={this.deleteq}
+            key={this.key}
             /> 
            } )
         }  

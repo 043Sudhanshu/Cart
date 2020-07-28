@@ -3,9 +3,9 @@ import React from 'react';
 class Cartitem extends React.Component{
    
     render(){
-       
+       console.log(this.props);
         const {price,title,qty} =this.props.product;      //object destructuring..directy use the property of this.state
-        const {product,increasequantity,decreasequantity}=this.props;
+        const {product,increasequantity,decreasequantity,deleteitem}=this.props;
         return(
             <div className="cart-item">
                 <div  className="left-block">
@@ -27,6 +27,7 @@ class Cartitem extends React.Component{
                             src="https://image.flaticon.com/icons/svg/1665/1665612.svg" 
                             />
                             <img 
+                            onClick={()=>deleteitem(product.key)}
                             alt="delete" className="action-icons" 
                             src="https://image.flaticon.com/icons/svg/1214/1214428.svg" 
                             />
