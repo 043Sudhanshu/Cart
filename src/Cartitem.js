@@ -3,18 +3,18 @@ import React from 'react';
 class Cartitem extends React.Component{
    
     render(){
-       console.log(this.props);
-        const {price,title,qty} =this.props.product;      //object destructuring..directy use the property of this.state
+       
+        const {price,title,qty,image} =this.props.product;      //object destructuring..directy use the property of this.state
         const {product,increasequantity,decreasequantity,deleteitem}=this.props;
         return(
             <div className="cart-item">
-                <div  className="left-block">
-                    <img style={styles.image} alt="" />
+                <div  className="left-block" style={{marginLeft:30}}>
+                    <img src={image} style={styles.image} alt="" />
                 </div>
-                 <div className="right-block">
+                 <div className="right-block" style={{marginLeft:30}}>
                       <div style={{fontSize:25}}>{title}</div>
-                      <div style={{color:'#777'}} >Rs {price}</div>
-                        <div style={{color:'#777'}} >{qty}</div>
+                      <div style={{color:'white'}} >Rs {price}</div>
+                        <div style={{color:'white'}} >Quantity: {qty}</div>
                       <div className="cart-item-actions">
                                 {/* Buttons -comment */}
                             <img 
@@ -43,6 +43,7 @@ const styles={
        height:140,
        borderRadius:25,
        background:'#ccc',
+       objectFit:"cover"
        
    }
 }
