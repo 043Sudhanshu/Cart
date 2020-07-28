@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: grey;
 }
 .cart-item {
   display: flex;
@@ -25,9 +26,14 @@ body {
   cursor: pointer;
 }
 .Cart{
-
 display: flex;
 flex-direction: column;
 justify-items: center;
+}
+.Cart>div{
+  background-color:yellowgreen;
+  margin:2px;
+  color:white;
+  padding:4px;
 }
 
