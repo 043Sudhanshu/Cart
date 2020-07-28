@@ -1,6 +1,6 @@
 import React from 'react';
 
-class CartItem extends React.Component{
+class Cartitem extends React.Component{
    
     constructor(){
         super();
@@ -11,9 +11,9 @@ class CartItem extends React.Component{
        }  
     }
     increasequantity= () => {
-            this.setState( (prevstate) => {
-          return {  qty: prevstate.qty+1}
-           });
+     this.setState((prevstate)=>{
+      return { qty:prevstate.qty+1}
+     });  
     }
     decreasequantity= () =>{
         const {qty} =this.state;
@@ -57,4 +57,4 @@ const styles={
    }
 }
 
-export default CartItem;
+export default Cartitem;
